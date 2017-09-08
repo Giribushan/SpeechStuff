@@ -1,0 +1,20 @@
+## Need to understand the samplling rate, and bits/sec, which can fit the training model very well..
+## Read the Acoustic model WIKI page..the audio should be recording with the same sampling rate the model has trained on..!!
+
+
+MFCC features!!
+The frequecy bands are equally placed on a MEL scale which can best represents the audio response.!
+Apply some cosine, and fourier transformation on the audio signal!!
+These features are fed to Acoustic model 
+So the AM will responsible for findig the relation ship, b/w audio signal and the phonemes(or linguistic units)
+
+
+##name_scopes are used to better the visualize the weights, biases, or cost or anything...
+tf.scalar_summary("cost_func" , cost_func)
+##to visualize
+Eg: 
+with tf.name_scope("training") as scope:
+   optimizer = tf.nn.GradientDescentOptimizer(learning_rate).minimize(cost)
+   
+##merging all summaries in a single operator!!
+tf.merge_all_summaries()
